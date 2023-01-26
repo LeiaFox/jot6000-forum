@@ -1,38 +1,55 @@
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
+  width: calc(100% - 20pt);
+  padding: 10pt;
+}
+
+h1,h2,h3,h4,h5,h6{
+  margin: 0pt;
+}
+
+.post{
+  display: flex;
+  flex-direction: column;
+  width: calc(100% - 20pt);
+}
+
+.post header{
+  display: flex;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  gap: 40pt;
+  width: 100%;
 }
 
-.App-link {
-  color: #61dafb;
+header:hover{
+  background-color: slategray;
+  cursor: pointer;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.reply header:hover{
+  background-color: rgba(255, 255, 255, 0);
+  cursor: default;
+}
+
+.post .stats{
+  flex: 1;
+  text-align: right;
+}
+
+.reply{
+  margin: 10pt;
+}
+
+.reply:has( .reply){
+  border-left: 1pt solid black;
+}
+
+.bgcolor:nth-of-type(even){
+  background-color: aquamarine;
+}
+
+.bgcolor:nth-of-type(odd){
+  background-color: rgb(255, 131, 127);
 }
